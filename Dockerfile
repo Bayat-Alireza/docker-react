@@ -10,7 +10,7 @@ COPY . .
 
 
 RUN yarn build
-# each from terminates each successive block
+# each FROM terminates before each successive block
 FROM nginx
 
 COPY --from=builder /app/build /usr/share/nginx/html
